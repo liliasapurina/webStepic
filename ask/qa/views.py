@@ -6,4 +6,4 @@ def test(request, *args, **kwargs):
     return HttpResponse('OK')
 
 def not_found(request):
-    return HttpResponseNotFound("Not Found!")
+    return HttpResponse(status=404)
