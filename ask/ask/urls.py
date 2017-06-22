@@ -18,11 +18,11 @@ from django.contrib import admin
 from qa.views import not_found, test
 
 urlpatterns = [
-    url(r'^$', test),
-    url(r'^login/', test),
-    url(r'^signup/', test),
-    url(r'^(?P<num>\d+)/$', test),
-    url(r'^ask/', test),
-    url(r'^popular/', test),
-    url(r'^new/', test)
+    url(r'^$', include('qa.urls')),
+    url(r'^login/', include('qa.urls')),
+    url(r'^signup/', include('qa.urls')),
+    url(r'^(?P<num>\d+)/$', include('qa.urls')),
+    url(r'^ask/', include('qa.urls')),
+    url(r'^popular/', include('qa.urls')),
+    url(r'^new/', include('qa.urls'))
 ]
