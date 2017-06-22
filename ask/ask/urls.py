@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
+from qa.views import not_found
 
 urlpatterns = [
     url(r'^$', include('qa.urls')),
@@ -25,5 +26,5 @@ urlpatterns = [
     url(r'^ask/$', include('qa.urls')),
     url(r'^popular/$', include('qa.urls')),
     url(r'^new/$', include('qa.urls')),
-    url(r'^', include('qa.urls'))
+    url(r'^', not_found)
 ]
