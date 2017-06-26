@@ -2,7 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class QuestionManager(models.Manager):
+    def new():
+        pass
+    def popular():
+        pass
+
 class Question(models.Model):
+    objects = QuestionManager()
+
     title = models.CharField(default="", max_length=1024)
     text = models.TextField(default="")
     added_at = models.DateField(null=True)
