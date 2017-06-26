@@ -1,7 +1,9 @@
 from django.conf.urls import url
-from django.contrib import admin
-from qa.views import test
+
+from . import views
 
 urlpatterns = [
-    url(r'.*', test)
+    # url(r'^$', views.test, name='test'),
+    # url(r'^login/$', views.test, name='test'),
+    url(r'^.*$', views.test, name='test'),
 ]
