@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-sudo /etc/init.d/mysql start
-mysql -uroot -e "CREATE DATABASE djbase;"
-mysql -uroot -e "CREATE USER 'django@localhost' IDENTIFIED BY 'qwerty';"
-mysql -uroot -e "GRANT ALL ON djbase.* TO 'django@localhost';"
+sudo /etc/init.d/mysql restart
+mysql -uroot -e "create database myproject;"
+mysql -uroot -e "CREATE USER 'enth'@'localhost' IDENTIFIED BY 'password';"
+mysql -uroot -e "GRANT ALL PRIVILEGES ON * . * TO 'lsapurina'@'localhost';"
 mysql -uroot -e "FLUSH PRIVILEGES;"
