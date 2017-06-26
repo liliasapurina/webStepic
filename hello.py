@@ -1,7 +1,7 @@
-#!/usr/bin/python
 def app(environ, start_response):
-    data = ''
-    for line in environ["QUERY_STRING"].split("&"):
-        data = data+line+"\n"
-    start_response('200 OK', [('Content-Type', 'text/plain')])
-    return [data]
+    status = '200 OK'
+    headers = [('Content-Type', 'text/plain')]
+    start_response(status, headers)
+    body = [bytes(i + '\r\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
+    return body
+
